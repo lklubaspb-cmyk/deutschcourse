@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D01 Modelldialog – Im Café/Restaurant</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Локальные стили, которые не конфликтуют с style.css */
+    .dialog-text span {
+        display: inline-block;
+        padding-right: 8px;
+        min-width: 100px;
+        font-weight: 700;
+    }
+    .kellnerin {
+        color: var(--terrakot);
+    }
+    .gast {
+        color: var(--blue);
+    }
+    
+    /* Стили кнопок (для этого макета) */
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    .buttons button {
+        background: var(--terrakot);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 26px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    .buttons button:hover {
+        background: #A8655E;
+    }
+  </style>
+</head>
+<body>
+  <header>Modul 1 – Im Café/Restaurant</header>
+
+  <div class="container">
+    <div class="frame">
+      <h1 class="blue-title">Modelldialog</h1>
+      
+      <video controls class="video-full">
+        <source src="media/D01_model.mp4" type="video/mp4">
+        Ваш браузер не поддерживает этот видеоэлемент.
+      </video>
+
+      <div class="caption">
+        Sehen und hören Sie sich den Modelldialog an. Achten Sie auf Aussprache und Intonation.
+      </div>
+      
+      <div class="dialog-text" style="margin-top: 25px; line-height: 1.8;">
+        <p>
+            <span class="gast">Gast:</span> Guten Abend. Haben Sie vielleicht einen Tisch für zwei Personen?<br>
+            <span class="kellnerin">Kellnerin:</span> Guten Abend. Draußen wäre schön, danke.<br>
+            <span class="gast">Gast:</span> Sehr gerne, hier ist ein Tisch. Möchten Sie schon was trinken?<br>
+            <span class="kellnerin">Kellnerin:</span> Ja gern. Ein großes Mineralwasser mit Kohlensäure.<br>
+            <span class="gast">Gast:</span> Sehr gut. Übrigens, unser Tagesgericht ist heute gegrillter Fisch mit Gemüse.<br>
+            <span class="kellnerin">Kellnerin:</span> Klingt lecker. Haben Sie auch was Vegetarisches?<br>
+            <span class="gast">Gast:</span> Ja, wir haben Pasta mit frischer Tomatensauce.<br>
+            <span class="kellnerin">Kellnerin:</span> Dann nehme ich die Pasta, bitte.<br>
+            <span class="gast">Gast:</span> Möchten Sie vorher noch einen kleinen Salat?<br>
+            <span class="kellnerin">Kellnerin:</span> Ja, bitte einen gemischten Salat.<br>
+            <span class="gast">Gast:</span> Mit Joghurt- oder lieber Balsamico-Dressing?<br>
+            <span class="kellnerin">Kellnerin:</span> Balsamico, bitte. Und können wir später getrennt zahlen?<br>
+            <span class="gast">Gast:</span> Natürlich, kein Problem. Ich bringe gleich Ihr Wasser.
+        </p>
+      </div>
+
+      <div class="buttons">
+        <button onclick="window.location.href='D01_Aufwaermen.html'">Zurück zum Aufwärmen</button>
+        <button onclick="window.location.href='D01_Aufgabe1.html'">Weiter zu Aufgabe 1</button>
+      </div>
+      
+    </div>
+  </div>
+
+  <footer>© Deutsch im Fluss 2025 - Alle Rechte vorbehalten</footer>
+</body>
+</html>

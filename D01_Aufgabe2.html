@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modul 1 – Kubik-Situation</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Локальные стили для Kubik-Situation и оформления */
+  :root {
+      --terrakot: #914D48;
+      --blue: #7B96A0;
+      --frame-bg: #FAFCFD;
+      --text: #2B2B2B;
+      --light-blue-bg: #EAF3F6;
+  }
+
+  /* УБРАТЬ НИЖНЕЕ ПРОСТРАНСТВО ПОД ФУТЕРОМ - ЖЁСТКОЕ ИСПРАВЛЕНИЕ */
+  html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      height: 100%;
+  }
+  
+  body {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .container {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+      flex: 1;
+  }
+  
+  .frame {
+      margin-bottom: 0 !important;
+  }
+  
+  .btn-row {
+      margin-bottom: 0 !important;
+  }
+  
+  footer {
+      margin: 0 !important;
+      padding: 10px 0 !important;
+  }
+
+  /* Голубой жирный для "Ziel", "Vorgehen", "Beispielantwort" (subhead-style) */
+  .bold-blue {
+    color: var(--blue);
+    font-weight: 600; 
+    font-size: 15pt; /* ИСПРАВЛЕНО: размер подзаголовков 15pt */
+  }
+  
+  /* Dice/Kubik Styles (Расположение в правом верхнем углу рамки) */
+  .kubik-roll-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 200px; 
+    text-align: center;
+    padding: 10px;
+    background: transparent;
+    z-index: 10;
+  }
+
+  /* СТИЛЬ КУБИКА: Кликабельный, терракотовый */
+  #rollDiceButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 15px;
+    line-height: 1;
+    display: block; 
+    width: 100%; 
+  }
+  
+  /* Сама иконка кубика */
+  .dice-icon {
+      font-size: 4rem; 
+      color: var(--terrakot);
+      display: inline-block;
+      transition: transform 0.1s;
+  }
+  #rollDiceButton:hover .dice-icon { 
+      color: #A8655E; 
+      transform: scale(1.05);
+  }
+  
+  /* ОКОШКО СЦЕНАРИЯ - ИСХОДНО СКРЫТО */
+  .scenario-output {
+    padding: 10px;
+    background: var(--light-blue-bg); 
+    border: 1px solid var(--blue); 
+    border-radius: 6px;
+    min-height: 50px; 
+    color: var(--text);
+    font-size: 0.95rem; 
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+    
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Класс для отображения окошка после выбора сценария */
+  .scenario-output.visible {
+      opacity: 1;
+  }
+  
+  /* Скрываем номер сценария */
+  .scenario-number {
+      display: none;
+  }
+  
+  /* Example box styling (бледно-голубой фон) */
+  .example-box {
+      background: #EAF3F6; 
+      border-left: 4px solid var(--blue);
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 4px;
+      line-height: 1.6;
+      font-style: italic;
+  }
+
+  /* General list styling consistency */
+  .frame ol {
+      padding-left: 25px; 
+      list-style-type: decimal;
+      line-height: 1.6;
+  }
+  .frame ol li {
+      margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+  <header>Modul 1 – Im Café/Restaurant</header>
+
+  <div class="container">
+    
+    <div class="frame">
+        
+        <div class="kubik-roll-container">
+            <button id="rollDiceButton" title="Rollen Sie den Würfel, um ein Szenario zu wählen">
+                <span class="dice-icon">🎲</span>
+            </button>
+            
+            <div id="scenarioOutput" class="scenario-output">
+                </div>
+        </div>
+
+        <h1 class="blue-title">Kubik-Situation</h1>
+        
+        <div class="task-description">
+            <p><span class="bold-blue">Ziel:</span> spontan auf unerwartete Situationen reagieren.</p>
+
+            <p><span class="bold-blue">Vorgehen:</span></p>
+            <ol>
+                <li>Auf den Würfel rechts klicken und ein zufälliges Szenario wählen.</li>
+                <li>Sofort reagieren: 3-5 freie Sätze zum Szenario sprechen.</li>
+                <li>Antwort als Audio aufnehmen und zur Selbstkontrolle anhören.</li>
+            </ol>
+        </div>
+        
+        <div class="example-section">
+            <p><span class="bold-blue">Beispielantwort:</span> <span style="color: var(--text);">Tagesgericht ist ausverkauft.</span></p>
+            <div class="example-box">
+                Ach schade, das wollte ich eigentlich probieren. Dann nehme ich bitte etwas
+                Anderes. Was können Sie mir stattdessen empfehlen? Vielleicht die Tagessuppe?
+            </div>
+        </div>
+
+        <div class="btn-row">
+            <button class="btn" onclick="location.href='D01_Aufgabe1.html'">Zurück zu Aufgabe 1</button>
+            <button class="btn" onclick="location.href='D01_Aufgabe3.html'">Weiter zu Aufgabe 3</button>
+        </div>
+
+    </div>
+  </div>
+
+  <footer>© Deutsch im Fluss 2025 - Alle Rechte vorbehalten</footer>
+
+  <script>
+    const scenarios = [
+      "1. Tagesgericht ist ausverkauft.",
+      "2. Bestellung wurde verwechselt.",
+      "3. Gast hat eine Nussallergie.",
+      "4. Kreditkarte funktioniert nicht.",
+      "5. Getränk wurde verschüttet.",
+      "6. Gast hat es sehr eilig." 
+    ];
+
+    document.getElementById('rollDiceButton').addEventListener('click', function() {
+      const roll = Math.floor(Math.random() * 6); 
+      const scenarioText = scenarios[roll];
+      
+      const outputDiv = document.getElementById('scenarioOutput');
+      
+      outputDiv.innerHTML = `<div>${scenarioText}</div>`;
+      
+      outputDiv.classList.add('visible');
+    });
+  </script>
+</body>
+</html>

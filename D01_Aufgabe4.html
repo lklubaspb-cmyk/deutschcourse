@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modul 1 – Schnellauftrag</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Локальные стили для Schnellauftrag */
+  :root {
+      --terrakot: #914D48;
+      --blue: #7B96A0;
+      --text: #2B2B2B;
+      --light-blue-bg: #EAF3F6;
+      --frame-bg: #FAFCFD;
+  }
+
+  /* Голубой цвет для ключевых слов - ярче, жирнее */
+  .subhead-blue {
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 15pt;
+  }
+
+  /* Таймер в правом верхнем углу */
+  .timer-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: center;
+    z-index: 10;
+  }
+
+  /* Кнопка запуска таймера - голубая */
+  #startTimerButton {
+    background: var(--blue);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: inline-block;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+    white-space: nowrap;
+  }
+  
+  #startTimerButton:hover {
+      background: #88A5AE;
+  }
+
+  /* Дисплей таймера - рамка терракотовая */
+  .timer-display {
+    padding: 6px 12px;
+    background: white;
+    border: 1.5px solid var(--terrakot);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--terrakot);
+    text-align: center;
+    min-width: 70px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Стили инструкций */
+  .task-description p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+      color: var(--text);
+  }
+  
+  .task-description ol {
+      padding-left: 25px;
+      list-style-type: decimal;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: var(--text);
+  }
+  
+  .task-description ol li {
+      margin-bottom: 8px;
+  }
+
+  /* Список с пустыми кружочками */
+  .task-list {
+      list-style-type: circle;
+      padding-left: 25px;
+      line-height: 1.6;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      color: var(--text);
+  }
+  
+  .task-list li {
+      margin-bottom: 8px;
+  }
+
+  /* Список сценариев - БЕЗ маркеров, в столбик */
+  .scenario-list {
+      list-style-type: none;
+      padding-left: 0;
+      line-height: 1.7;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      color: var(--text);
+  }
+  
+  .scenario-list li {
+      margin-bottom: 15px;
+  }
+  
+  /* Названия сценариев - бледно-терракотовые, жирные */
+  .scenario-name {
+      color: #A8655E; /* БЛЕДНО-ТЕРРАКОТОВЫЙ (как hover кнопок) */
+      font-weight: 700;
+  }
+  
+  /* Галочки терракотовые */
+  .checkmark {
+      color: var(--terrakot);
+      font-weight: bold;
+      margin: 0 3px;
+  }
+
+  /* Пример ответа */
+  .example-box {
+      background: var(--light-blue-bg);
+      border-left: 4px solid var(--blue);
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 4px;
+      line-height: 1.6;
+      font-style: italic;
+  }
+</style>
+</head>
+<body>
+  <header>Modul 1 – Im Café/Restaurant</header>
+
+  <div class="container">
+    
+    <div class="frame">
+        
+        <div class="timer-container">
+            <button id="startTimerButton" title="Timer auf 30 Sekunden starten">
+                ⏱️ Timer starten
+            </button>
+            <div id="timerDisplay" class="timer-display">00:30</div>
+        </div>
+
+        <h1 class="blue-title">Schnellauftrag</h1>
+        
+        <div class="task-description">
+            <p><span class="subhead-blue">Ziel:</span> in kurzer Zeit eine klare Bestellung formulieren.</p>
+
+            <p><span class="subhead-blue">Vorgehen:</span></p>
+            <ol>
+                <li>Timer auf 30 Sekunden starten.</li>
+                <li>Laut bestellen:
+                    <ul class="task-list">
+                        <li>ein Getränk und ein Hauptgericht nennen</li>
+                        <li>mindestens eine Frage zu den Zutaten stellen</li>
+                        <li>am Ende um getrennte Rechnung bitten</li>
+                    </ul>
+                </li>
+                <li>Antwort als Audio aufnehmen.</li>
+            </ol>
+        </div>
+
+        <p><span class="subhead-blue">Szenarien:</span></p>
+        <ul class="scenario-list">
+            <li><span class="scenario-name">Vegetarier mit Allergie:</span> <span class="checkmark">✓</span> Salat und vegetarisches Gericht bestellen <span class="checkmark">✓</span> nach Nüssen fragen <span class="checkmark">✓</span> mit Karte zahlen.</li>
+            <li><span class="scenario-name">Gast in Eile:</span> <span class="checkmark">✓</span> Kaffee und schnelles Gericht (Tagessuppe) bestellen <span class="checkmark">✓</span> fragen, wie lange die Zubereitung dauert <span class="checkmark">✓</span> zum Mitnehmen verpacken lassen.</li>
+            <li><span class="scenario-name">Diätessen:</span> <span class="checkmark">✓</span> Wasser ohne Kohlensäure und Fischgericht bestellen <span class="checkmark">✓</span> fragen, ob ohne Öl/Soße möglich ist <span class="checkmark">✓</span> um halbe Portion bitten.</li>
+            <li><span class="scenario-name">Familie mit Kind:</span> <span class="checkmark">✓</span> Saft für Kind und zwei Hauptgerichte bestellen <span class="checkmark">✓</span> nach Kinderportion Pasta fragen <span class="checkmark">✓</span> bitten, Kindergericht zuerst zu bringen.</li>
+            <li><span class="scenario-name">Besondere Vorlieben:</span> <span class="checkmark">✓</span> Tee und glutenfreies Gericht bestellen <span class="checkmark">✓</span> fragen, welche Beilagen verfügbar sind <span class="checkmark">✓</span> Kartoffeln durch Gemüse ersetzen lassen.</li>
+            <li><span class="scenario-name">Neue Gerichte probieren:</span> <span class="checkmark">✓</span> Hausgemachte Limonade und neues saisonales Gericht bestellen <span class="checkmark">✓</span> fragen, ob das Gericht scharf ist <span class="checkmark">✓</span> um Brot zur Suppe bitten.</li>
+        </ul>
+
+        <p><span class="subhead-blue">Beispielantwort (≈ 30 Sek.):</span></p>
+        <div class="example-box">
+            Guten Abend! Ich hätte gern ein großes Mineralwasser mit Kohlensäure. Als Hauptgericht bitte das gegrillte Gemüse mit Reis. Können Sie mir sagen, ob in der Soße Sahne enthalten ist? Ich vertrage nämlich keine Milchprodukte. Und könnten wir bitte später getrennt bezahlen? Danke schön!
+        </div>
+
+        <div class="btn-row">
+            <button class="btn" onclick="location.href='D01_Aufgabe3.html'">Zurück zu Aufgabe 3</button>
+            <button class="btn" onclick="location.href='D01_Aufgabe5.html'">Weiter zu Aufgabe 5</button>
+        </div>
+
+    </div>
+  </div>
+
+  <footer>© Deutsch im Fluss 2025 - Alle Rechte vorbehalten</footer>
+
+  <script>
+    let timerInterval;
+    let timeLeft = 30;
+    let isRunning = false;
+
+    document.getElementById('startTimerButton').addEventListener('click', function() {
+      if (isRunning) {
+        clearInterval(timerInterval);
+        isRunning = false;
+        this.textContent = '▶️ Timer fortsetzen';
+      } else {
+        if (timeLeft === 30) {
+          this.textContent = '⏸️ Timer stoppen';
+        } else {
+          this.textContent = '⏸️ Timer stoppen';
+        }
+        
+        isRunning = true;
+        
+        timerInterval = setInterval(function() {
+          timeLeft--;
+          updateDisplay();
+          
+          if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            isRunning = false;
+            document.getElementById('timerDisplay').textContent = 'Zeit ist um!';
+            document.getElementById('startTimerButton').textContent = '⏱️ Timer starten';
+            timeLeft = 30;
+          }
+        }, 1000);
+      }
+    });
+
+    function updateDisplay() {
+      const seconds = timeLeft;
+      const display = seconds < 10 ? '00:0' + seconds : '00:' + seconds;
+      document.getElementById('timerDisplay').textContent = display;
+    }
+  </script>
+</body>
+</html>

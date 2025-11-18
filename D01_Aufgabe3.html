@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modul 1 – Kreative Variation</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Локальные стили для Kreative Variation */
+  
+  /* Header текст - центрирован, виден на голубой полосе */
+  header {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  
+  /* Встроенное окно диалога - ИСПРАВЛЕНО: точно как на странице Aufgabe1 */
+  #dialog-box {
+      display: none; 
+      position: fixed;
+      top: 50px; 
+      right: 50px; 
+      left: auto; 
+      transform: none; 
+      width: 550px; 
+      height: 90vh; 
+      max-width: 90%;
+      max-height: 800px;
+      background-color: white;
+      border: 5px solid var(--blue);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      z-index: 1000;
+      overflow: hidden;
+  }
+
+  #dialog-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+  }
+
+  #dialog-box button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--terrakot);
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 1001;
+  }
+  
+  /* Бледно-голубой цвет для ключевых слов (Ziel, Vorgehen, Szenarien, Beispielantwort) */
+  .subhead-blue {
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 15pt; /* ИСПРАВЛЕНО: размер подзаголовков 15pt */
+  }
+  
+  /* Стили инструкций */
+  .task-description p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+      color: var(--text);
+  }
+  .task-description ol {
+      padding-left: 25px;
+      list-style-type: decimal;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: var(--text);
+  }
+  .task-description ol li {
+      margin-bottom: 5px;
+  }
+
+  /* Список сценариев с пустыми кружочками */
+  .scenario-list {
+      list-style-type: circle;
+      padding-left: 25px;
+      line-height: 1.6;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      color: var(--text);
+  }
+  .scenario-list li {
+      margin-bottom: 8px;
+  }
+
+  /* Пример ответа с бледно-голубым фоном */
+  .example-box {
+      background: #EAF3F6; 
+      border-left: 4px solid var(--blue);
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 4px;
+      line-height: 1.6;
+  }
+  
+  /* Заголовок примера - ЦЕНТРИРОВАН */
+  .example-header {
+      text-align: center;
+      margin-bottom: 15px;
+  }
+  
+  /* "💬 Крeativer Dialog" - ТЕРРАКОТОВЫЙ, жирный */
+  .creative-dialog-title {
+      color: var(--terrakot);
+      font-weight: 700;
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+  }
+  
+  /* "Gewählte Szenarien" - обычный текст, НЕ голубой */
+  .scenario-selection {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--text);
+  }
+
+  /* Выделение ролей в диалоге */
+  .role-kellnerin {
+      color: var(--terrakot);
+      font-weight: bold;
+  }
+  .role-gast {
+      color: var(--blue);
+      font-weight: bold;
+  }
+  
+  .dialog-content {
+      margin-top: 10px;
+      line-height: 1.7;
+  }
+  
+  .dialog-content p {
+      margin: 0;
+  }
+</style>
+</head>
+<body>
+  <header>Modul 1 – Im Café/Restaurant</header>
+
+  <div class="container">
+    
+    <div class="frame">
+        
+        <button class="modal-trigger-btn" onclick="openModelDialog()">Zum Modelldialog</button>
+
+        <h1 class="blue-title">Kreative Variation</h1>
+        
+        <div class="task-description">
+            <p><span class="subhead-blue">Ziel:</span> den Dialog kreativ umgestalten.</p>
+
+            <p><span class="subhead-blue">Vorgehen:</span></p>
+            <ol>
+                <li>mindestens zwei Szenarien auswählen.</li>
+                <li>einen neuen Dialog mit ausgewählten Szenarien erstellen (≥ 10 Repliken).</li>
+                <li>neuen Dialog als Audio aufnehmen.</li>
+            </ol>
+        </div>
+        
+        <p><span class="subhead-blue">Szenarien:</span></p>
+        <ul class="scenario-list">
+            <li>Gast bestellt nur ein schnelles Frühstück.</li>
+            <li>Gast ist Veganer und fragt nach Alternativen.</li>
+            <li>Kellnerin empfiehlt ein besonderes Dessert.</li>
+            <li>Kind begleitet den Gast und möchte ein spezielles Getränk.</li>
+            <li>Gast fragt nach einem Platz näher am Fenster.</li>
+            <li>Gast bittet um eine kleine Portion Suppe zum Probieren.</li>
+        </ul>
+
+        <p><span class="subhead-blue">Beispielantwort:</span></p>
+        
+        <div class="example-box">
+            <div class="example-header">
+                <span class="creative-dialog-title">💬 Kreativer Dialog</span>
+                <span class="scenario-selection">Gewählte Szenarien: Veganer-Alternative · Dessert-Empfehlung</span>
+            </div>
+            
+            <div class="dialog-content">
+                <p>
+                    <span class="role-kellnerin">Kellnerin:</span> Guten Morgen! Was darf ich Ihnen bringen?<br>
+                    <span class="role-gast">Gast:</span> Guten Morgen! Ich bin vegan. Haben Sie etwas ohne tierische Produkte?<br>
+                    <span class="role-kellnerin">Kellnerin:</span> Natürlich! Wir haben ein veganes Frühstück mit Avocado und Vollkornbrot.<br>
+                    <span class="role-gast">Gast:</span> Das klingt gut. Gibt es auch etwas Süßes, das vegan ist?<br>
+                    <span class="role-kellnerin">Kellnerin:</span> Ja, unser Apfelkuchen ist vegan - ganz ohne Milch und Eier.<br>
+                    <span class="role-gast">Gast:</span> Oh, wunderbar! Dann nehme ich den Kuchen und einen Kaffee mit Hafermilch.<br>
+                    <span class="role-kellnerin">Kellnerin:</span> Sehr gern. Möchten Sie den Kuchen warm oder kalt?<br>
+                    <span class="role-gast">Gast:</span> Warm, bitte. Dankeschön!
+                </p>
+            </div>
+        </div>
+
+        <div class="btn-row">
+            <button class="btn" onclick="location.href='D01_Aufgabe2.html'">Zurück zu Aufgabe 2</button>
+            <button class="btn" onclick="location.href='D01_Aufgabe4.html'">Weiter zu Aufgabe 4</button>
+        </div>
+
+    </div>
+  </div>
+
+  <div id="dialog-box">
+    <iframe src="D01_Modelldialog.html"></iframe>
+    <button onclick="document.getElementById('dialog-box').style.display='none'">Schließen ✖</button>
+  </div>
+
+  <footer>© Deutsch im Fluss 2025 - Alle Rechte vorbehalten</footer>
+
+  <script>
+    function openModelDialog() {
+      document.getElementById('dialog-box').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

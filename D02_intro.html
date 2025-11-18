@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modul 2 – Im Hotel / Check-in</title>
+<style>
+:root {
+  --terrakot: #914D48;
+  --blue: #7B96A0;
+  --beige: #F5F1E9;
+  --dark: #2B2B2B;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--beige);
+  color: var(--dark);
+}
+
+header {
+  background: var(--blue);
+  color: white;
+  padding: 14px 0;
+  text-align: center;
+  font-size: 34pt;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+footer {
+  background: var(--blue);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 12pt;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.btn {
+  background: var(--terrakot);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-size: 12pt;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(145, 77, 72, 0.3);
+}
+
+.btn:hover {
+  background: #A8655E;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(145, 77, 72, 0.4);
+}
+
+.intro-content {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.module-title {
+  color: var(--terrakot);
+  font-size: 28pt;
+  font-weight: 700;
+  margin-bottom: 50px;
+  line-height: 1.4;
+  padding-bottom: 10px;
+}
+
+.image-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dissolve-image {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-position: 20% center;
+  -webkit-mask-image: radial-gradient(ellipse 90% 85% at 50% 50%, 
+                                       black 20%, 
+                                       rgba(0,0,0,0.7) 40%, 
+                                       rgba(0,0,0,0.3) 60%, 
+                                       transparent 85%);
+  mask-image: radial-gradient(ellipse 90% 85% at 50% 50%, 
+                               black 20%, 
+                               rgba(0,0,0,0.7) 40%, 
+                               rgba(0,0,0,0.3) 60%, 
+                               transparent 85%);
+}
+
+.image-container::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+  background: radial-gradient(ellipse 70% 65% at 50% 50%, 
+                              transparent 30%, 
+                              rgba(245, 241, 233, 0.5) 50%,
+                              rgba(245, 241, 233, 0.9) 70%,
+                              var(--beige) 90%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.image-container::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(ellipse 85% 80% at 50% 50%, 
+                              transparent 40%, 
+                              rgba(245, 241, 233, 0.6) 60%,
+                              var(--beige) 85%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.nav-buttons .btn {
+  min-width: auto;
+  width: auto;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  header {
+    font-size: 24pt;
+  }
+  
+  .module-title {
+    font-size: 22pt;
+    margin-bottom: 40px;
+  }
+  
+  .nav-buttons {
+    flex-direction: column;
+  }
+  
+  .nav-buttons .btn {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+  <header>Deutsch im Fluss</header>
+  
+  <div class="container">
+    <div class="intro-content">
+      
+      <h1 class="module-title">Modul 2<br>Im Hotel / Check-in</h1>
+      
+      <div class="image-container">
+        <img src="modul2.jpg" 
+             alt="Hotel Reception Interior" 
+             class="dissolve-image">
+      </div>
+      
+      <div class="nav-buttons">
+        <button class="btn" onclick="location.href='D01_Redemittel.html'">← Zurück zu Modul 1</button>
+        <button class="btn" onclick="location.href='D02_Aufwaermen.html'">Modul 2 starten →</button>
+      </div>
+      
+    </div>
+  </div>
+  
+  <footer>© Deutsch im Fluss 2025 - Alle Rechte vorbehalten</footer>
+</body>
+</html>

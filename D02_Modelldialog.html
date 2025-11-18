@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D02 Modelldialog – Im Hotel</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .dialog-text span {
+        display: inline-block;
+        padding-right: 8px;
+        min-width: 160px;
+        font-weight: 700;
+    }
+    .rezeptionistin {
+        color: var(--terrakot);
+    }
+    .gast {
+        color: var(--blue);
+    }
+    
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        border-radius: 10px;
+        border: 2px solid var(--terrakot);
+        margin-bottom: 15px;
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>Modul 2 – Im Hotel / Check-in</header>
+  <div class="container">
+    <div class="frame">
+      <h1 class="blue-title">Modelldialog</h1>
+      
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/1l8QYKbFtZY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="caption">
+        Sehen und hören Sie sich den Modelldialog an. Achten Sie auf Aussprache und Intonation.
+      </div>
+      
+      <div class="dialog-text" style="margin-top: 25px; line-height: 1.8;">
+        <p>
+            <span class="rezeptionistin">Rezeptionistin:</span> Guten Tag! Haben Sie eine Reservierung?<br>
+            <span class="gast">Gast:</span> Guten Tag. Nein, wir hätten gern ein Doppelzimmer für zwei Nächte.<br>
+            <span class="rezeptionistin">Rezeptionistin:</span> Mit oder ohne Frühstück?<br>
+            <span class="gast">Gast:</span> Mit Frühstück, bitte. Haben Sie vielleicht ein Zimmer mit Balkon?<br>
+            <span class="rezeptionistin">Rezeptionistin:</span> Ja, Zimmer 305. Es kostet 120 Euro pro Nacht.<br>
+            <span class="gast">Gast:</span> Sehr gut. Ist WLAN im Preis inbegriffen?<br>
+            <span class="rezeptionistin">Rezeptionistin:</span> Ja, WLAN ist inklusive. Möchten Sie einen Parkplatz reservieren?<br>
+            <span class="gast">Gast:</span> Ja, bitte. Wir reisen mit einem Hund. Wäre das möglich?<br>
+            <span class="rezeptionistin">Rezeptionistin:</span> Ein Hund ist erlaubt, der Aufpreis beträgt 15 Euro pro Nacht.<br>
+            <span class="gast">Gast:</span> Können wir vielleicht am Abreisetag später auschecken?<br>
+            <span class="rezeptionistin">Rezeptionistin:</span> Ein Late Check-out bis 15 Uhr ist möglich für 20 Euro.<br>
+            <span class="gast">Gast:</span> Perfekt, ich zahle gern mit Karte.<br>
+            <span class="rezeptionistin">Rezeptionistin:</span> Vielen Dank. Hier ist Ihre Schlüsselkarte. Ich wünsche Ihnen einen angenehmen Aufenthalt.
+        </p>
+      </div>
+      <div class="btn-row">
+        <button class="btn" onclick="window.location.href='D02_Aufwaermen.html'">Zurück zum Aufwärmen</button>
+        <button class="btn" onclick="window.location.href='D02_Aufgabe1.html'">Weiter zu Aufgabe 1</button>
+      </div>
+      
+    </div>
+  </div>
+  <footer>© Deutsch im Fluss 2025 - Alle Rechte vorbehalten</footer>
+</body>
+</html>

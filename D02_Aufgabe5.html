@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aufgabe 5 – Modul 2</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .instruction-label {
+    color: var(--blue);
+    font-weight: 600; 
+    margin-right: 5px;
+    font-size: 15pt;
+  }
+  
+  .instruction-text {
+    line-height: 1.6;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+  
+  .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+  }
+  
+  .image-card {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  
+  .image-card:hover {
+    border-color: var(--terrakot);
+    box-shadow: 0 6px 20px rgba(145, 77, 72, 0.25);
+    transform: translateY(-3px);
+  }
+  
+  .image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .image-card .caption {
+    padding: 15px;
+    text-align: center;
+    font-size: 12pt;
+    color: var(--text);
+    background: #f8f9fa;
+  }
+  
+  .modal-image {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-image.active {
+    display: flex;
+  }
+  
+  .modal-image img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 10px;
+  }
+  
+  .modal-image .close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .modal-image .close:hover {
+    color: var(--terrakot);
+  }
+  
+  #dialog-box {
+      display: none; 
+      position: fixed;
+      top: 50px; 
+      right: 50px; 
+      left: auto; 
+      transform: none; 
+      width: 550px; 
+      height: 90vh; 
+      max-width: 90%;
+      max-height: 800px;
+      background-color: white;
+      border: 5px solid var(--blue);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      z-index: 1000;
+      overflow: hidden;
+  }
+
+  #dialog-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+  }
+
+  #dialog-box button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--terrakot);
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 1001;
+  }
+</style>
+</head>
+<body>
+  <header>Modul 2 – Im Hotel / Check-in</header>
+  
+  <div class="container">
+    <div class="frame">
+      
+      <button class="modal-trigger-btn" onclick="openModelDialog()">Zum Modelldialog</button>
+      
+      <h1 class="blue-title">Aufgabe 5: Arbeit mit realem Objekt</h1>
+      
+      <p class="instruction-text"><span class="instruction-label">Ziel:</span> eine Anfrage anhand einer echten Hotel-Website formulieren.</p>
+      <p class="instruction-text"><span class="instruction-label">Vorgehen:</span></p>
+      <ol>
+        <li>Sehen Sie sich die Screenshots der Hotel-Website an (klicken Sie auf ein Bild für Vollansicht).</li>
+        <li>Wählen Sie ein Zimmer aus und nennen Sie den Preis.</li>
+        <li>Stellen Sie mindestens zwei Zusatzfragen (z.B. zu WLAN, Parkplatz, Frühstück, Check-in-Zeit).</li>
+        <li>Formulieren Sie Ihre Anfrage laut und nehmen Sie sie als Audio auf.</li>
+      </ol>
+      
+      <div class="image-gallery">
+        <div class="image-card" onclick="openImage('media/hotel1.jpg')">
+          <img src="media/hotel1.jpg" alt="Hotel Website Screenshot 1">
+          <div class="caption">Hotel-Website - Zimmerkategorien</div>
+        </div>
+        
+        <div class="image-card" onclick="openImage('media/hotel2.jpg')">
+          <img src="media/hotel2.jpg" alt="Hotel Website Screenshot 2">
+          <div class="caption">Hotel-Website - Preise & Ausstattung</div>
+        </div>
+        
+        <div class="image-card" onclick="openImage('media/hotel3.jpg')">
+          <img src="media/hotel3.jpg" alt="Hotel Website Screenshot 3">
+          <div class="caption">Hotel-Website - Zusatzleistungen</div>
+        </div>
+      </div>
+      
+      <div style="background: #fff9e6; border-left: 4px solid #ffc107; padding: 15px; border-radius: 5px; margin: 20px 0;">
+        <strong>💡 Tipp:</strong> Versuchen Sie, so realistisch wie möglich zu sprechen - als würden Sie wirklich im Hotel anrufen oder an der Rezeption stehen.
+      </div>
+      
+      <div class="btn-row">
+        <button class="btn" onclick="window.location.href='D02_Aufgabe4.html'">Zurück zu Aufgabe 4</button>
+        <button class="btn" onclick="window.location.href='intro.html'">Zurück zur Übersicht</button>
+      </div>
+      
+    </div>
+  </div>
+
+  <div id="dialog-box">
+    <iframe src="D02_Modelldialog.html"></iframe>
+    <button onclick="document.getElementById('dialog-box').style.display='none'">Schließen ✖</button>
+  </div>
+  
+  <div id="imageModal" class="modal-image" onclick="closeImage()">
+    <span class="close">&times;</span>
+    <img id="modalImg" src="" alt="Full size image">
+  </div>
+
+  <footer>© Deutsch im Fluss 2025 - Alle Rechte vorbehalten</footer>
+
+<script>
+  function openModelDialog() {
+    document.getElementById('dialog-box').style.display = 'block';
+  }
+  
+  function openImage(src) {
+    document.getElementById('imageModal').classList.add('active');
+    document.getElementById('modalImg').src = src;
+  }
+  
+  function closeImage() {
+    document.getElementById('imageModal').classList.remove('active');
+  }
+</script>
+</body>
+</html>

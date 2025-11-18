@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modul 1 – Redemittel</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Локальные стили для Redemittel */
+  :root {
+      --terrakot: #914D48;
+      --blue: #7B96A0;
+      --text: #2B2B2B;
+      --frame-bg: #FAFCFD;
+  }
+
+  /* Бледно-голубой цвет для ключевых слов */
+  .subhead-blue {
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 15pt;
+  }
+
+  /* Подзаголовок "Arbeitsanweisung" - ГОЛУБОЙ (не бледный) */
+  .section-title {
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 15pt;
+  }
+
+  /* Названия заданий в инструкциях - меньше размером */
+  .instruction-title {
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 13.5pt;
+  }
+
+  /* Ключевые слова в списке - ярко-голубые */
+  .highlight-blue {
+      color: var(--blue);
+      font-weight: 700;
+  }
+
+  /* Контейнер для центрирования списка */
+  .phrase-columns {
+      text-align: center;
+      margin: 10px auto 15px auto;
+  }
+
+  /* Список фраз - один столбец по центру */
+  .phrase-list {
+      list-style-type: circle;
+      padding: 0;
+      margin: 0;
+      line-height: 1.8;
+      color: var(--text);
+      font-size: 1rem;
+      text-align: left;
+      display: inline-block;
+  }
+  
+  .phrase-list li {
+      margin-bottom: 8px;
+      margin-left: 20px;
+  }
+
+  /* Инструкции - список с голубыми точками вместо цифр */
+  .instructions-list {
+      list-style-type: none;
+      padding-left: 0;
+      line-height: 1.7;
+      margin-top: 10px;
+      color: var(--text);
+  }
+  
+  .instructions-list li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 20px;
+  }
+  
+  .instructions-list li::before {
+      content: "•";
+      color: var(--blue);
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: -3px;
+  }
+</style>
+</head>
+<body>
+  <header>Modul 1 – Im Café/Restaurant</header>
+
+  <div class="container">
+    
+    <div class="frame">
+
+        <h1 class="blue-title">Zusätzliche authentische Redemittel</h1>
+        
+        <div class="phrase-columns">
+            <ul class="phrase-list">
+                <li>Kann ich die <span class="highlight-blue">Tageskarte sehen</span>?</li>
+                <li>Ich <span class="highlight-blue">empfehle</span> Ihnen etwas Leichtes.</li>
+                <li><span class="highlight-blue">Lieber ohne</span> Zwiebeln, <span class="highlight-blue">geht das</span>?</li>
+                <li>Wir zahlen sofort.</li>
+                <li><span class="highlight-blue">Darf ich</span> noch ein Leitungswasser <span class="highlight-blue">bringen</span>?</li>
+                <li>Eine kleine Portion <span class="highlight-blue">reicht mir</span>.</li>
+                <li><span class="highlight-blue">Ist</span> das Dessert <span class="highlight-blue">hausgemacht</span>?</li>
+                <li>Möchten Sie <span class="highlight-blue">Brot nachbestellen</span>?</li>
+                <li>Dieser Wein <span class="highlight-blue">passt gut zu</span> Fisch.</li>
+                <li>Der <span class="highlight-blue">Tisch am Fenster</span> ist frei.</li>
+            </ul>
+        </div>
+
+        <div style="margin-top:15px; margin-bottom:25px;">
+            <audio controls preload="metadata" style="width:100%;">
+                <source src="media/D01Redemittel.mp3" type="audio/mpeg">
+                <source src="media/D01Redemittel.ogg" type="audio/ogg">
+                Ihr Browser unterstützt das Audioelement nicht.
+            </audio>
+        </div>
+
+        <p><span class="section-title">Arbeitsanweisung für die Redemittel:</span></p>
+        
+        <ul class="instructions-list">
+            <li><span class="instruction-title">Modulregel:</span> in jedem Übungsschritt mindestens eine passende Redemittelphrase einsetzen.</li>
+            <li><span class="instruction-title">Rotation:</span> bei Wiederholungen andere 2-3 Phrasen verwenden; bis zum Modulende alle 10 abdecken.</li>
+            <li><span class="instruction-title">Wiederholungslimit:</span> nicht öfter als zweimal pro Modul dieselbe Phrase nutzen.</li>
+            <li><span class="instruction-title">Passgenauigkeit:</span> Phrasen nur dort einfügen, wo sie logisch passen; sonst überspringen und im nächsten Schritt verwenden.</li>
+            <li><span class="instruction-title">Abdeckung prüfen:</span> eine Checkliste mit 10 Punkten führen und verwendete Phrasen abhaken; bis zum Abschluss alle markieren.</li>
+        </ul>
+
+        <div class="btn-row">
+            <button class="btn" onclick="location.href='D01_Aufgabe5.html'">Zurück zu Aufgabe 5</button>
+            <button class="btn" onclick="location.href='D02_Intro.html'">Weiter zu Modul 2</button>
+        </div>
+
+    </div>
+  </div>
+
+  <footer>© Deutsch im Fluss 2025 - Alle Rechte vorbehalten</footer>
+</body>
+</html>

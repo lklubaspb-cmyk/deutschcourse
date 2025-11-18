@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modul 1 – Im Café / Restaurant</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ЛОКАЛЬНЫЕ СТИЛИ ДЛЯ D01_AUFGABE1 */
+  
+  /* Метки Ziel: и Vorgehen: - Голубые и менее жирные (600) */
+  .instruction-label {
+    color: var(--blue);
+    font-weight: 600; 
+    margin-right: 5px;
+    font-size: 15pt; /* ИСПРАВЛЕНО: размер подзаголовков 15pt */
+  }
+  
+  /* Текст инструкции - Графитовый */
+  .instruction-text {
+    line-height: 1.6;
+    margin-bottom: 12px;
+    color: var(--text); /* #2B2B2B */
+  }
+
+  .video-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .video-block {
+    flex: 1;
+    text-align: center;
+  }
+  .video-block video {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 8px;
+    border: 2px solid var(--terrakot);
+  }
+  
+  /* Список с пустыми кружочками */
+  .frame ul {
+    list-style-type: circle;
+    padding-left: 22px;
+    margin-top: 10px;
+    color: var(--text);
+  }
+  .frame li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  /* ИСПРАВЛЕНО: Встроенное окно: ПЛАВАЮЩЕЕ, СПРАВА, УМЕНЬШЕННЫЙ РАЗМЕР */
+  #dialog-box {
+      display: none; 
+      position: fixed;
+      top: 50px; 
+      right: 50px; 
+      left: auto; 
+      transform: none; 
+      width: 550px; 
+      height: 90vh; 
+      max-width: 90%;
+      max-height: 800px;
+      background-color: white;
+      border: 5px solid var(--blue);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      z-index: 1000;
+      overflow: hidden;
+  }
+
+  #dialog-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+  }
+
+  /* Кнопка закрыть модальное окно */
+  #dialog-box button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--terrakot);
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 1001;
+  }
+</style>
+</head>
+<body>
+  <header>Modul 1 – Im Café/Restaurant</header>
+  
+  <div class="container">
+    <div class="frame">
+      
+      <button class="modal-trigger-btn" onclick="openModelDialog()">Zum Modelldialog</button>
+      
+      <h1 class="blue-title">Modell & Rollenwechsel</h1>
+      
+      <p class="instruction-text"><span class="instruction-label">Ziel:</span> den Dialog flüssig sprechen und beide Rollen sicher beherrschen.</p>
+      <p class="instruction-text"><span class="instruction-label">Vorgehen:</span></p>
+      <ol>
+        <li>Dialog zweimal aufmerksam anhören.</li>
+        <li>Text laut nachsprechen - zuerst als Gast, dann als Kellnerin.</li>
+      </ol>
+
+      <div class="video-container">
+        <div class="video-block">
+          <video controls>
+            <source src="media/D01RWGast.mp4" type="video/mp4">
+            Ihr Browser unterstützt dieses Videoelement nicht.
+          </video>
+          <div class="caption">🎧 Variante 1 – Kellnerin spricht, Gast antwortet</div>
+        </div>
+
+        <div class="video-block">
+          <video controls>
+            <source src="media/D01RWKellnerin.mp4" type="video/mp4">
+            Ihr Browser unterstützt dieses Videoelement nicht.
+          </video>
+          <div class="caption">🎧 Variante 2 – Gast spricht, Kellnerin antwortet</div>
+        </div>
+      </div>
+
+      <ol start="3">
+        <li>Dialog mehrmals frei wiedergeben, ohne den Text zu lesen.</li>
+        <li>Dialog erneut spielen und kleine Details variieren, z. B.:</li>
+      </ol>
+      <ul>
+        <li>um Leitungswasser statt Mineralwasser bitten</li>
+        <li>nach einer kleineren Portion bitten</li>
+        <li>um eine Decke bitten, weil es draußen kühl ist</li>
+      </ul>
+      <ol start="5">
+        <li>Eigene Version als Audio aufnehmen und kritisch anhören (Fluss, Aussprache, Höflichkeitsformeln).</li>
+      </ol>
+      
+      <div class="btn-row">
+        <button class="btn" onclick="window.location.href='D01_Modelldialog.html'">Zurück zum Modelldialog</button>
+        <button class="btn" onclick="window.location.href='D01_Aufgabe2.html'">Weiter zu Aufgabe 2</button>
+      </div>
+      
+    </div>
+  </div>
+
+  <div id="dialog-box">
+    <iframe src="D01_Modelldialog.html"></iframe>
+    <button onclick="document.getElementById('dialog-box').style.display='none'">Schließen ✖</button>
+  </div>
+
+  <footer>© Deutsch im Fluss 2025 - Alle Rechte vorbehalten</footer>
+
+<script>
+  // Скрипт для открытия окна
+  function openModelDialog() {
+    document.getElementById('dialog-box').style.display = 'block';
+  }
+</script>
+</body>
+</html>

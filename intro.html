@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Einführung – Deutsch im Fluss</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Локальные стили для макета Intro */
+  
+  /* Убрать текст на верхней полосе, сохранить голубую полосу (Header) */
+  header {
+      font-size: 0; 
+  }
+
+  /* Заголовок Willkommen (Терракот) */
+  .welcome {
+    text-align: center; 
+    color: var(--terrakot);
+    margin: 40px 0 20px 0; 
+    font-size: 2.1rem; 
+    font-weight: 700;
+  }
+
+  /* Двухколончатый макет */
+  .main-content {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start; 
+  }
+
+  /* Левая колонка (Видео) */
+  .left-column {
+      flex: 0 0 40%; 
+      max-width: 40%;
+  }
+
+  /* Правая колонка (Рамка) */
+  .right-column {
+      flex: 1; 
+      max-width: 60%;
+  }
+
+  /* Стили для видео */
+  .intro-video {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid var(--terrakot); 
+  }
+
+  /* Заголовки и подзаголовки в рамке - ЯРКО-ГОЛУБОЙ */
+  .frame h1.blue-title {
+      color: var(--blue); 
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 26px; 
+      text-align: center;
+  }
+  .subhead {
+      color: var(--blue);
+      font-size: 20px;
+      font-weight: 700; /* ЯРЧЕ */
+      margin-top: 20px;
+      margin-bottom: 10px;
+      text-align: left;
+  }
+  
+  /* Текст и списки внутри рамки */
+  .frame p {
+      text-align: left;
+  }
+  
+  /* Списки: отступы и маркеры */
+  .frame ul, .frame ol {
+    margin-top: 0;
+    line-height: 1.6;
+    color: var(--text);
+    text-align: left;
+  }
+  
+  /* Главный список (Aufbau des Programms) - УБРАТЬ маркеры */
+  .main-list {
+      list-style-type: none;
+      padding-left: 0;
+  }
+  .main-list > li {
+      list-style-type: none; 
+      margin-bottom: 12px;
+  }
+  
+  /* Вложенные списки (Модули) и список Timing - ПУСТЫЕ КРУЖОЧКИ и ОТСТУП */
+  .main-list ul, .timing-list {
+      list-style-type: circle; 
+      padding-left: 25px;
+  }
+  
+  /* Список Ablauf einer Lerneinheit */
+  .frame ol {
+      list-style-type: decimal;
+      padding-left: 25px;
+  }
+
+  /* Кнопка "Zum Modul 1" - СПРАВА */
+  .button-container {
+    text-align: right;
+    margin-top: 30px;
+  }
+  .next-button {
+      background: var(--terrakot);
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 26px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-weight: 600;
+  }
+  .next-button:hover { background: #A8655E; }
+</style>
+</head>
+<body>
+  <header></header>
+
+  <div class="container">
+    
+    <h2 class="welcome">Willkommen zum Kurs "Deutsch im Fluss"</h2>
+    
+    <div class="main-content">
+        
+        <div class="left-column">
+            <video controls class="intro-video">
+                <source src="media/Intro.mp4" type="video/mp4">
+                Ihr Browser unterstützt dieses Videoelement nicht.
+            </video>
+        </div>
+
+        <div class="right-column">
+            <div class="frame">
+                
+                <h1 class="blue-title">Einführung zum Kurs</h1>
+                
+                <div class="subhead">Ziel des Kurses</div>
+                <p>Das Ziel dieses Kurses ist es, Schritt für Schritt frei und natürlich Deutsch zu sprechen. Sie hören zuerst ein Sprachmodell und sprechen dann selbst - zuerst nach, später frei. So lernen Sie, im Gespräch schnell zu reagieren, passende Formulierungen zu wählen und höflich zu bleiben. Im Mittelpunkt steht nicht die perfekte Grammatik, sondern der flüssige Ausdruck auf A1-B1-Niveau. Alle Übungen basieren auf realen Szenen aus dem Alltag - mit klaren Beispielen und festen Redemitteln.</p>
+
+                <div class="subhead">Aufbau des Programms</div>
+                <ul class="main-list">
+                    <li>12 Module insgesamt:
+                        <ul>
+                            <li>6 Modelldialoge: Café / Hotel / Supermarkt / Bahnhof / Apotheke / Beim Arzt</li>
+                            <li>6 Modellmonologe: Bank / Post / Jobcenter / Konsulat / Wohnungssuche / Ausländerbehörde</li>
+                        </ul>
+                    </li>
+                    <li>Jedes Modul enthält:
+                        <ul>
+                            <li>Sprachmodell (Dialog oder Monolog)</li>
+                            <li>Schritt-für-Schritt-Hinweise</li>
+                            <li>Redemittel</li>
+                            <li>Sprechpraxis</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="subhead">Ablauf einer Lerneinheit</div>
+                <ol>
+                    <li>Aufwärmen (1-3 Min.) - 10 Wörter laut + ein Zielsatz</li>
+                    <li>Modellarbeit - hören - nachsprechen - frei formulieren</li>
+                    <li>Anwendung zur Situation - eigenes Sprechen mithilfe der Szenarien und Redemittel</li>
+                    <li>Ergebnis sichern - kurze Audioaufnahme und Notiz zum Lernfortschritt</li>
+                </ol>
+
+                <div class="subhead">Timing</div>
+                <ul class="timing-list">
+                    <li>Dauer pro Einheit: ca. 30-40 Minuten</li>
+                    <li>Frequenz: 3-4 Einheiten pro Woche</li>
+                    <li>Voller Zyklus: 12 Module - 4-6 Wochen</li>
+                </ul>
+
+                <div class="button-container">
+                    <button class="next-button" onclick="window.location.href='D01_Aufwaermen.html'">Zum Modul 1</button>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+  </div>
+
+  <footer>© Deutsch im Fluss 2025 - Alle Rechte vorbehalten</footer>
+</body>
+</html>
